@@ -14,8 +14,8 @@ const MoviePageReviews = () => {
       try {
         setLoading(true);
         const { data } = await getMovieByReviews(id);
-        console.oog(data);
-        setComments(data.cast);
+        console.log(data);
+        setComments(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -28,8 +28,7 @@ const MoviePageReviews = () => {
 
   const url = 'https://image.tmdb.org/t/p/w500/';
 
-  // const isComments = Boolean(comments.length);
-  const isComments = true;
+  const isComments = Boolean(comments.length);
   console.log(comments);
   return (
     <>
@@ -37,11 +36,10 @@ const MoviePageReviews = () => {
       {error && <p>{error}</p>}
       {isComments && (
         <ul>
-          {comments.map(({ id, name, character, profile_path }) => (
+          {comments.map(({ id, author, content }) => (
             <li key={id}>
-              <h4>{name}</h4>
-              <h5>{character}</h5>
-              <img src={url + profile_path} />
+              <h4>{author}</h4>
+              <p>{content}</p>
             </li>
           ))}
         </ul>
