@@ -14,6 +14,7 @@ const SinglePostCommentsPage = lazy(() =>
 const MoviePageReviews = lazy(() =>
   import('./pages/MoviePageReviews/MoviePageReviews')
 );
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 const AppRoutes = () => {
   return (
@@ -25,6 +26,7 @@ const AppRoutes = () => {
           <Route path="cast" element={<SinglePostCommentsPage />} />
           <Route path="reviews" element={<MoviePageReviews />} />
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
