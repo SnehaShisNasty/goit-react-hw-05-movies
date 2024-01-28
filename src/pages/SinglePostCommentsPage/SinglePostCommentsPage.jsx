@@ -28,6 +28,7 @@ const SinglePostCommentsPage = () => {
   }, []);
 
   const url = 'https://image.tmdb.org/t/p/w500/';
+  const defaultImg = 'https://via.placeholder.com/250x350';
 
   const isComments = Boolean(comments.length);
   return (
@@ -40,7 +41,13 @@ const SinglePostCommentsPage = () => {
             <li key={id}>
               <h4>{name}</h4>
               <h5>{character}</h5>
-              <img src={url + profile_path} />
+              {console.log(profile_path)}
+              <img
+                src={profile_path ? url + profile_path : defaultImg}
+                width={250}
+                height={350}
+                alt="poster"
+              />
             </li>
           ))}
         </ul>
@@ -49,4 +56,4 @@ const SinglePostCommentsPage = () => {
   );
 };
 
-export { SinglePostCommentsPage };
+export default SinglePostCommentsPage;

@@ -6,7 +6,9 @@ const SharedLayout = () => {
   return (
     <>
       <NavMenu></NavMenu>
-      <Outlet></Outlet>
+      <Suspense fallback={<p>...Loading page</p>}>
+        <Outlet></Outlet>
+      </Suspense>
     </>
   );
 };

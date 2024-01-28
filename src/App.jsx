@@ -1,4 +1,3 @@
-import { NavMenu } from 'components/NavMenu/NavMenu.jsx';
 import { AppRoutes } from './AppRoutes.jsx';
 
 function App() {

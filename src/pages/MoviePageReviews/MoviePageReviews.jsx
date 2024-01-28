@@ -48,4 +48,4 @@ const MoviePageReviews = () => {
   );
 };
 
-export { MoviePageReviews };
+export default MoviePageReviews;

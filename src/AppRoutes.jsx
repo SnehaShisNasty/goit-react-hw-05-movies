@@ -3,11 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 
 import { SharedLayout } from './components/SharedLayout/SharedLayout';
 
-import { HomePage } from 'pages/HomePage/HomePage';
-import { MoviePage } from 'pages/MoviePage/MoviePage';
-import { MovieSearchPage } from 'pages/MovieSearchPage/MovieSearchPage';
-import { SinglePostCommentsPage } from 'pages/SinglePostCommentsPage/SinglePostCommentsPage';
-import { MoviePageReviews } from 'pages/MoviePageReviews/MoviePageReviews';
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const MovieSearchPage = lazy(() =>
+  import('./pages/MovieSearchPage/MovieSearchPage')
+);
+const MoviePage = lazy(() => import('./pages/MoviePage/MoviePage'));
+const SinglePostCommentsPage = lazy(() =>
+  import('./pages/SinglePostCommentsPage/SinglePostCommentsPage')
+);
+const MoviePageReviews = lazy(() =>
+  import('./pages/MoviePageReviews/MoviePageReviews')
+);
 
 const AppRoutes = () => {
   return (
