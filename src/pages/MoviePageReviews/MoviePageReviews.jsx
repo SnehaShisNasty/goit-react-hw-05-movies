@@ -24,7 +24,7 @@ const MoviePageReviews = () => {
     };
 
     fetchComments();
-  }, []);
+  }, [id]);
 
   const isComments = Boolean(comments.length);
   console.log(comments);
