@@ -24,9 +24,7 @@ const MoviePageReviews = () => {
     };
 
     fetchComments();
-  }, []);
-
-  const url = 'https://image.tmdb.org/t/p/w500/';
+  });
 
   const isComments = Boolean(comments.length);
   console.log(comments);

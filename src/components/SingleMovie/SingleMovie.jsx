@@ -1,11 +1,5 @@
 import { useState, useEffect } from 'react';
-import {
-  Link,
-  Outlet,
-  useParams,
-  useNavigate,
-  useLocation,
-} from 'react-router-dom';
+import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 
 import { getMovieById } from 'api/movie';
 
@@ -14,7 +8,6 @@ import styles from './single-movie.module.css';
 const SingleMovie = () => {
   const [movie, setMovie] = useState();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const { id } = useParams();
   const location = useLocation();
@@ -31,14 +24,14 @@ const SingleMovie = () => {
 
         setMovie(data);
       } catch (error) {
-        setError(error.message);
+        console.log(error);
       } finally {
         setLoading(false);
       }
     };
 
     serverMovie();
-  }, []);
+  }, [id]);
 
   const goBack = () => navigate(from);
   const url = 'https://image.tmdb.org/t/p/original/';
