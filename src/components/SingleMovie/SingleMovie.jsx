@@ -31,7 +31,7 @@ const SingleMovie = () => {
     };
 
     serverMovie();
-  });
+  }, [id]);
 
   const goBack = () => navigate(from);
   const url = 'https://image.tmdb.org/t/p/original/';

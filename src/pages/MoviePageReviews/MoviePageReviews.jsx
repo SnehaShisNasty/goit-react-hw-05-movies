@@ -14,7 +14,6 @@ const MoviePageReviews = () => {
       try {
         setLoading(true);
         const { data } = await getMovieByReviews(id);
-        console.log(data);
         setComments(data.results);
       } catch (error) {
         setError(error.message);
@@ -27,7 +26,7 @@ const MoviePageReviews = () => {
   }, [id]);
 
   const isComments = Boolean(comments.length);
-  console.log(comments);
+
   return (
     <>
       {loading && <p>...Loading</p>}

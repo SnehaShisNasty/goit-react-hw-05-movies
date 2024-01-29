@@ -24,7 +24,7 @@ const HomeMovieList = () => {
     };
 
     serverAllMovies();
-  });
+  }, [movies]);
   const url = 'https://image.tmdb.org/t/p/w500/';
   return (
     <>

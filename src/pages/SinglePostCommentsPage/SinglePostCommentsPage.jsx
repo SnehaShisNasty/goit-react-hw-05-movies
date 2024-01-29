@@ -25,7 +25,7 @@ const SinglePostCommentsPage = () => {
     };
 
     fetchComments();
-  });
+  }, [id]);
 
   const url = 'https://image.tmdb.org/t/p/w500/';
   const defaultImg = 'https://via.placeholder.com/250x350';
