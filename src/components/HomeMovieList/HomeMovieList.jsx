@@ -27,6 +27,7 @@ const HomeMovieList = () => {
     serverAllMovies();
   }, []);
   const url = 'https://image.tmdb.org/t/p/w500/';
+  const defaultImg = 'https://via.placeholder.com/338x281';
   return (
     <>
       <section className={styles.section}>
@@ -37,7 +38,11 @@ const HomeMovieList = () => {
             <li key={id} className={styles.card}>
               <Link to={`/movie/${id}`} state={{ from: location }}>
                 <p className={styles.subtitle}> {title || name}</p>
-                <img src={url + backdrop_path} alt="" className={styles.img} />
+                <img
+                  src={backdrop_path ? url + backdrop_path : defaultImg}
+                  alt=""
+                  className={styles.img}
+                />
               </Link>
             </li>
           ))}

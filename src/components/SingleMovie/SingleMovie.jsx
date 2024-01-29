@@ -35,6 +35,9 @@ const SingleMovie = () => {
 
   const goBack = () => navigate(from);
   const url = 'https://image.tmdb.org/t/p/original/';
+  const defaultUrl = 'https://via.placeholder.com/1900x500';
+  console.log(movie);
+  // console.log(movie.backdrop_path);
   return (
     <section className="section">
       {loading && <p>...Loading</p>}
@@ -45,7 +48,13 @@ const SingleMovie = () => {
       {movie && (
         <div>
           <div
-            style={{ backgroundImage: `url(${url + movie.backdrop_path})` }}
+            style={{
+              backgroundImage: `url(${
+                movie.backdrop_path !== null
+                  ? url + movie.backdrop_path
+                  : defaultUrl
+              })`,
+            }}
             className={styles.movieContainer}
           ></div>
           <div className={styles.flex}>

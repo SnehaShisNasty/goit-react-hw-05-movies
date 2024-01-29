@@ -1,7 +1,45 @@
+.section {
+  background-color: #4f2a26;
+}
+.title {
+  position: absolute;
+  top: -11px;
+  left: 10%;
+  font-size: 25px;
+  font-weight: bold;
+}
 .list {
+  display: flex;
 
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  flex-basis: calc(20% - (4 * 10px));
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  height: 450px;
+  margin: 50px auto;
+  background: #2a264f;
+  border: 5px solid #1a163f;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #2a264f;
 }
 
-.item {
-    margin-bottom: 15px;
+.subtitle {
+  height: 22%;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #fffc;
+  padding: 15px 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -95px 28px -25px #000 inset;
 }

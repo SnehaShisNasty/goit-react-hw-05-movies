@@ -31,7 +31,7 @@ const MoviePageReviews = () => {
     <>
       {loading && <p>...Loading</p>}
       {error && <p>{error}</p>}
-      {isComments && (
+      {isComments ? (
         <ul>
           {comments.map(({ id, author, content }) => (
             <li key={id}>
@@ -40,6 +40,8 @@ const MoviePageReviews = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>Sorry, but we did not find any reviews</p>
       )}
     </>
   );

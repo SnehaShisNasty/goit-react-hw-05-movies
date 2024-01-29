@@ -12,7 +12,6 @@ import { getMovieBySearch } from 'api/movie';
 const PostsSearch = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -29,7 +28,7 @@ const PostsSearch = () => {
           data.results?.length ? [...prevPosts, ...data.results] : prevPosts
         );
       } catch (error) {
-        setError(error.message);
+        console.log(error);
       } finally {
         setLoading(false);
       }
@@ -53,7 +52,6 @@ const PostsSearch = () => {
   return (
     <>
       <PostsSearchForm onSubmit={handleSearch} />
-      {error && <p className={styles.error}>{error}</p>}
       {loading && <p>...Loading</p>}
       {isPosts && <PostsSearchList items={posts} />}
       {isPosts && (
