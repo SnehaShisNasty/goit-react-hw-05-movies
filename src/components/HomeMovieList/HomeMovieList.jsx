@@ -16,6 +16,7 @@ const HomeMovieList = () => {
         setLoading(true);
         const { data } = await getAllMovies();
         setMovies(data.results?.length ? data.results : []);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       } finally {
@@ -24,7 +25,7 @@ const HomeMovieList = () => {
     };
 
     serverAllMovies();
-  }, [movies]);
+  }, []);
   const url = 'https://image.tmdb.org/t/p/w500/';
   return (
     <>
